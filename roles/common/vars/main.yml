@@ -1,5 +1,5 @@
 packages_list:
   - vim
-  - ack
+  - ack*
   - tree
   - tmux
