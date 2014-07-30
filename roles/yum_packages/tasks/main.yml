@@ -1,3 +1,5 @@
 ---
-- name: "Install using yum"
-  command: echo "foo"
+- name: "Installing packages"
+  yum: pkg={{ item }} state=installed
+  sudo: yes
+  with_items: packages_list
