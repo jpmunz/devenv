@@ -1,0 +1,16 @@
+---
+- name: "Install vim"
+  apt: pkg='vim' state=installed
+  sudo: yes
+
+- name: "Install ack"
+  apt: pkg='ack' state=installed
+  sudo: yes
+
+- name: "Install tree"
+  apt: pkg='tree' state=installed
+  sudo: yes
+
+- name: "Install tmux"
+  apt: pkg='tmux' state=installed
+  sudo: yes

@@ -2,13 +2,23 @@
 - hosts: 127.0.0.1
   connection: local
   pre_tasks:
-    - name: create directory for ansible custom facts
+    - name: Check for preference file
+      command: test -e preferences.fact
+      register: has_preferences
+      ignore_errors: yes
+    - name: Create directory for ansible custom facts
       file: state=directory recurse=yes path=/etc/ansible/facts.d
-    - name: install preferences custom fact
+      sudo: yes
+      when: has_preferences.rc == 0
+    - name: Install preferences custom fact
       copy: src=preferences.fact dest=/etc/ansible/facts.d
-    - name: re-read facts after adding custom fact
+      sudo: yes
+      when: has_preferences.rc == 0
+    - name: Re-read facts after adding custom fact
       setup: filter=ansible_local
+      when: has_preferences.rc == 0
 
-  tasks:
-    - include: tasks/tools.yml
-    - include: tasks/dotfiles.yml
+  roles:
+    - common
+    - { role: yum_packages, when: "ansible_pkg_mgr == 'yum'" }
+    - { role: apt_packages, when: "ansible_pkg_mgr == 'apt'" }
