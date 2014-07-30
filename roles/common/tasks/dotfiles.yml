@@ -15,7 +15,7 @@
   template: src=flake8 dest=~/.config/flake8
 
 - name: Source .bash_custom
-  lineinfile: dest=~/.bashrc line="source ~/.bash_custom"
+  lineinfile: dest=~/.bashrc line="source ~/.bash_custom" insertafter=EOF
 
 - name: Load .bash_custom
   template: src=bash/main.sh dest=~/.bash_custom
