@@ -32,8 +32,16 @@
 - name: Load .tmux.conf
   template: src=.tmux.conf dest=~/.tmux.conf
 
-- name: Create .vim plugin folder
-  unarchive: src=vim.tar.gz dest=~/
+- name: Create vim plugin directory
+  file: path=~/.vim/autoload state=directory
+
+- name: Load pathogen.vim
+  copy: src=vim/autoload/pathogen.vim dest=~/.vim/autoload/pathogen.vim
+
+- name: Load syntastic
+  git: repo=https://github.com/scrooloose/syntastic.git
+       bare=yes
+       dest=~/.vim/bundle/syntastic
 
 - name: Load .vimrc
   template: src=.vimrc dest=~/.vimrc
