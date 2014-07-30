@@ -1,0 +1,14 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  pre_tasks:
+    - name: create directory for ansible custom facts
+      file: state=directory recurse=yes path=/etc/ansible/facts.d
+    - name: install preferences custom fact
+      copy: src=preferences.fact dest=/etc/ansible/facts.d
+    - name: re-read facts after adding custom fact
+      setup: filter=ansible_local
+
+  tasks:
+    - include: tasks/tools.yml
+    - include: tasks/dotfiles.yml
