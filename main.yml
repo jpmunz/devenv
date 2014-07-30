@@ -28,6 +28,7 @@
 
   roles:
     - common
+    - { role: ubuntu, when: ansible_distribution == 'Ubuntu' }
     - { role: yum_packages, when: "ansible_pkg_mgr == 'yum'" }
     - { role: apt_packages, when: "ansible_pkg_mgr == 'apt'" }
     - { role: playhaven, when: "env_set is defined and env_set and ansible_local.preferences.env.name == 'playhaven'" }

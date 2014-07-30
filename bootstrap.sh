@@ -34,4 +34,4 @@ if ! $(available ansible) ; then
     fi 
 fi
 
-ansible-playbook -i localhost, main.yml
+ansible-playbook -i localhost, main.yml --ask-sudo-pass

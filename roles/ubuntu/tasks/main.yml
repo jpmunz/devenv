@@ -1,0 +1,2 @@
+- name: Ack-grep alias
+  lineinfile: dest=~/.bash_custom_aliases line="alias ack='ack-grep'"

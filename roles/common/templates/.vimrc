@@ -17,7 +17,7 @@ set shiftwidth=4
 " Tab overrides
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType HTML setlocal shiftwidth=2 tabstop=2
-autocmd FileType YAML setlocal shiftwidth=2 tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 " File types
 au BufNewFile,BufRead *.hb set filetype=HTML

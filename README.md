@@ -1,4 +1,7 @@
-Uses Ansible to configure a new machine to my desired developer environment.
+Devenv
+========
+
+Uses Ansible to configure a new machine to my standard dev environment.
 
 Checkout and bootstrap
 
