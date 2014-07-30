@@ -13,3 +13,27 @@
 
 - name: Load flake8 config
   template: src=flake8 dest=~/.config/flake8
+
+- name: Source .bash_custom
+  lineinfile: dest=~/.bashrc line="source ~/.bash_custom"
+
+- name: Load .bash_custom
+  template: src=bash/main.sh dest=~/.bash_custom
+
+- name: Load .bash_custom_aliases
+  template: src=bash/aliases.sh dest=~/.bash_custom_aliases
+
+- name: Load .bash_custom_functions
+  template: src=bash/functions.sh dest=~/.bash_custom_functions
+
+- name: Load .git_prompt
+  copy: src=bash/git_prompt.sh dest=~/.git_prompt
+
+- name: Load .tmux.conf
+  template: src=.tmux.conf dest=~/.tmux.conf
+
+- name: Create .vim plugin folder
+  unarchive: src=vim.tar.gz dest=~/
+
+- name: Load .vimrc
+  template: src=.vimrc dest=~/.vimrc
