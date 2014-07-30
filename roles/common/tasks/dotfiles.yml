@@ -1,0 +1,15 @@
+---
+- name: Load .vimrc
+  template: src=.vimrc dest=~/.vimrc
+
+- name: Load .gitignore
+  template: src=.gitignore dest=~/.gitignore
+
+- name: Load .gitconfig
+  template: src=.gitconfig dest=~/.gitconfig
+
+- name: Config directory
+  file: path=~/.config state=directory
+
+- name: Load flake8 config
+  template: src=flake8 dest=~/.config/flake8

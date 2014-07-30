@@ -18,22 +18,20 @@ function install_pkg {
     fi 
 }
 
-function install_ansible {
-    if ! $(available pip) ; then
-        install_pkg python-dev
-        install_pkg python-pip
-    fi
+if ! $(available pip) ; then
+    echo "Pip not available installing..."
+    install_pkg python-dev >/dev/null
+    install_pkg python-pip >/dev/null
+fi
+
+if ! $(available ansible) ; then
+    echo "Ansible not available installing..."
 
     sudo pip install ansible
 
     if [ $? -ne 0 ] ; then
         exit 1
     fi 
-}
-
-if ! $(available ansible) ; then
-    echo "Ansible not available installing..."
-    install_ansible >/dev/null
 fi
 
 ansible-playbook -i localhost, main.yml

@@ -1,0 +1,35 @@
+{% if ansible_local is defined and ansible_local.preferences is defined
+    and ansible_local.preferences.git is defined %}
+{% set prefs = ansible_local.preferences.git %}
+{% else %}
+{% set prefs = {} %}
+{% endif %}
+[hub]
+    protocol = https
+[user]
+{% if prefs.name is defined %}
+    name = {{ prefs.name }}
+{% endif %}
+{% if prefs.email is defined %}
+    email = {{ prefs.email }}
+{% endif %}
+[alias]
+    co = checkout
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+[apply]
+    whitespace = nowarn
+[mergetool]
+    keepBackup = false
+[difftool]
+    prompt = false
+[help]
+    autocorrect = 1
+[credential]
+    helper = cache
