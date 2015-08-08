@@ -1,6 +1,0 @@
----
-- name: Reference Playhaven vim config
-  lineinfile: dest=~/.vimrc line="so ~/.vim.playhaven" insertafter=EOF
-
-- name: Load Playhaven .vim config
-  template: src=.vim.playhaven dest=~/.vim.playhaven

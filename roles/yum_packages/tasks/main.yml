@@ -1,5 +1,0 @@
----
-- name: "Installing packages"
-  yum: pkg={{ item }} state=installed
-  sudo: yes
-  with_items: packages_list

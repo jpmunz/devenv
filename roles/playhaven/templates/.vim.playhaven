@@ -1,4 +1,0 @@
-" Tab overrides
-autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
-autocmd FileType HTML setlocal shiftwidth=4 tabstop=4
-autocmd FileType YAML setlocal shiftwidth=4 tabstop=4

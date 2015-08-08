@@ -1,0 +1,25 @@
+[hub]
+    protocol = https
+[user]
+    name =  'Jonathan Munz'
+    email = jpmunz@gmail.com
+[alias]
+    co = checkout
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+[apply]
+    whitespace = nowarn
+[mergetool]
+    keepBackup = false
+[difftool]
+    prompt = false
+[help]
+    autocorrect = 1
+[credential]
+    helper = cache

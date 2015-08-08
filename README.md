@@ -1,13 +1,26 @@
-Devenv
-========
+#### Setup dotfiles
 
-Uses Ansible to configure a new machine to my standard dev environment.
+```
+$ ./install-dotfiles.sh
+```
 
-Checkout and bootstrap
+#### Install packages
 
-    $ git clone https://github.com/jpmunz/devenv.git
-    $ source ./devenv/bootstrap
+```
+$ sudo ./install-packages.sh
+```
 
-Optionally copy and edit the preferences file
+#### Setup VM
 
-    $ cp ./devenv/preferences.fact.sample ./devenv/preferences.fact
+Prequisties
+
+1. [Install Virtualbox](http://www.virtualbox.org/)
+2. [Install Vagrant](http://www.vagrantup.com/downloads)
+
+Install and connect
+
+```
+$ cd devenv; vagrant up; vagrant ssh
+```
+
+The VM will be bootstrapped with the dotfiles and app packages.
