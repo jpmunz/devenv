@@ -6,6 +6,8 @@ set ffs=unix
 set backupdir=~/.vim-tmp,/var/tmp/
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l"
 
+ab pdb import pdb; pdb.set_trace() #XXX
+
 " Set tabs
 set expandtab
 set autoindent
@@ -30,11 +32,19 @@ command Dw %s/\s\+$\| \+\ze\t//g
 command Dn %s/\r$
 
 " Linting
-let g:syntastic_check_on_open = 1
-let g:syntastic_error_symbol = '!'
-let g:syntastic_warning_symbol = '?'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" Python
-let g:pymode_folding = 0
-let g:syntastic_python_checkers = ['flake8']
-ab pdb import pdb; pdb.set_trace() #XXX
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+  " Javascript
+  let g:syntastic_javascript_checkers = ['eslint']
+
+  " Python
+  let g:pymode_folding = 0
+  let g:syntastic_python_checkers = ['flake8']
+
