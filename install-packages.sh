@@ -21,10 +21,7 @@ $INSTALL \
   gcc \
   gcc-c++ \
   make \
-
-  # phantomjs requirements for now
-  # http://www.bonusbits.com/wiki/HowTo:Install_PhantomJS_on_CentOS
-  fontconfig freetype freetype-devel fontconfig-devel libstdc++ \
+  fontconfig freetype freetype-devel fontconfig-devel libstdc++ \ # phantomjs requirements for now
 
 pip install \
   flake8 \

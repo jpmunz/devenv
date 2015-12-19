@@ -43,6 +43,7 @@ let g:syntastic_check_on_wq = 0
 
   " Javascript
   let g:syntastic_javascript_checkers = ['eslint']
+  autocmd BufNewFile,BufRead *.json let g:syntastic_javascript_checkers = ['']
 
   " Python
   let g:pymode_folding = 0

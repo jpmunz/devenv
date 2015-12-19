@@ -9,3 +9,7 @@ PS1='\e[1;34m\A $(__git_ps1 "(%s)") \w\e[m\n$ '
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
+
+# Globbing
+shopt -s globstar
+shopt -s extglob
