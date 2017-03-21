@@ -31,6 +31,9 @@ autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
 command Dw %s/\s\+$\| \+\ze\t//g
 command Dn %s/\r$
 
+" Press Space to turn off highlighting and clear any message already displayed.
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
 " Linting
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
