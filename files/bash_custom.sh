@@ -13,3 +13,9 @@ alias la='ls -a'
 # Globbing
 shopt -s globstar
 shopt -s extglob
+
+# Helper functions
+find-replace ()
+{
+  ack "$1" -l | xargs -i@ sed -i "s/$1/$2/g" @
+}
