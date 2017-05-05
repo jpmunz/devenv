@@ -22,5 +22,5 @@ find-replace ()
 
 vim-ack ()
 {
-  vim $(ack "$1" -l)
+  vim $(ack "$1" -l) -c "/$1"
 }
