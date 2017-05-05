@@ -19,3 +19,8 @@ find-replace ()
 {
   ack "$1" -l | xargs -i@ sed -i "s/$1/$2/g" @
 }
+
+vim-ack ()
+{
+  vim $(ack "$1" -l)
+}
