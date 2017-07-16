@@ -15,7 +15,7 @@ set tabstop=2
 set shiftwidth=2
 
 " Tab overrides
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 foldmethod=syntax foldlevel=99
 autocmd FileType HTML setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
@@ -52,3 +52,5 @@ let g:syntastic_check_on_wq = 0
   let g:pymode_folding = 0
   let g:syntastic_python_checkers = ['flake8']
 
+" Folding
+:nnoremap <space> za
