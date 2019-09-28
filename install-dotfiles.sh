@@ -12,4 +12,6 @@ cp files/.gitconfig ~/.gitconfig
 cp files/.gitignore ~/.gitignore
 cp files/git_prompt.sh ~/.git_prompt
 cp files/flake8 ~/flake8
-cp -r files/vim ~/.vim
+
+mkdir -p ~/.local/share/nvim/site/pack/git-plugins/start
+git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.local/share/nvim/site/pack/git-plugins/start/ale
