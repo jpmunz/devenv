@@ -13,5 +13,6 @@ cp files/.gitignore ~/.gitignore
 cp files/git_prompt.sh ~/.git_prompt
 cp files/flake8 ~/flake8
 
-mkdir -p ~/.local/share/nvim/site/pack/git-plugins/start
-git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.local/share/nvim/site/pack/git-plugins/start/ale
+mkdir -p ~/.vim/pack/git-plugins/start/
+git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.vim/pack/git-plugins/start/ale
+git clone --depth 1 https://github.com/embear/vim-localvimrc.git ~/.vim/pack/git-plugins/start/vim-localvimrc

@@ -12,10 +12,10 @@ $INSTALL \
   unzip \
   git \
   npm \
-  python-dev \
-  python-pip \
-  neovim \
-  python3-neovim \
+  vim \
+  python3 \
+  python3-dev \
+  python3-pip \
   ack* \
   net-tools \
   tmux \
@@ -24,7 +24,7 @@ $INSTALL \
   gcc-c++ \
   make
 
-pip install \
+pip3 install \
   flake8 \
 
 npm install -g \

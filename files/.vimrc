@@ -1,4 +1,3 @@
-execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
@@ -18,6 +17,7 @@ set shiftwidth=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 foldmethod=syntax foldlevel=99
 autocmd FileType HTML setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType python setlocal shiftwidth=4 tabstop=4
 
 " File types
 au BufNewFile,BufRead *.hb set filetype=HTML
@@ -35,24 +35,20 @@ command Dn %s/\r$
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Linting
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+let g:ale_fixers = {
+\  'javascript': ['eslint'],
+\  'python': ['flake8'],
+\}
 
+let g:ale_fix_on_save = 1
+
+" LocalVim
 let g:localvimrc_ask = 0
 let g:localvimrc_sandbox = 0
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
-  " Javascript
-  let g:syntastic_javascript_checkers = ['eslint']
-  autocmd BufNewFile,BufRead *.json let g:syntastic_javascript_checkers = ['']
-
-  " Python
-  let g:pymode_folding = 0
-  let g:syntastic_python_checkers = ['flake8']
-
-" Folding
-:nnoremap <space> za
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
