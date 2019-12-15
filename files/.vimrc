@@ -34,14 +34,6 @@ command Dn %s/\r$
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-" Linting
-let g:ale_fixers = {
-\  'javascript': ['eslint'],
-\  'python': ['flake8'],
-\}
-
-let g:ale_fix_on_save = 1
-
 " LocalVim
 let g:localvimrc_ask = 0
 let g:localvimrc_sandbox = 0
