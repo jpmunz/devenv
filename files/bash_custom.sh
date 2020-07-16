@@ -24,3 +24,25 @@ vim-ack ()
 {
   vim $(ack "$1" -l) -c "/$1"
 }
+
+# Navigation
+# https://unix.stackexchange.com/a/4291
+
+pushd()
+{
+  if [ $# -eq 1 ]; then
+    DIR="${HOME}"
+  else
+    DIR="$1"
+  fi
+
+  builtin pushd "${DIR}" > /dev/null
+}
+
+popd()
+{
+  builtin popd > /dev/null
+}
+
+alias cd='pushd'
+alias back='popd'
