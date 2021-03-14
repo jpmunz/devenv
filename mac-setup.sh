@@ -18,5 +18,9 @@ brew install ack
 brew install diff-so-fancy
 brew install tree
 brew install wget
+brew install yarn
 
 defaults write NSGlobalDomain KeyRepeat -int 3
+
+mkdir -p ~/Library/KeyBindings/
+cp macfiles/DefaultKeyBinding.dict ~/Library/KeyBindings/
