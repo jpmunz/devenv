@@ -8,4 +8,8 @@
   "^c" = "copy:";
   "^v" = "paste:";
   "^x" = "cut:";
+  "^a" = "selectAll:";
+  "^z" = "undo:";
+  "^r" = "redo:";
+  "^s" = "saveDocument:";
 }

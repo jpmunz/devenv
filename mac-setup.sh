@@ -19,6 +19,7 @@ brew install diff-so-fancy
 brew install tree
 brew install wget
 brew install yarn
+brew install evernote
 
 defaults write NSGlobalDomain KeyRepeat -int 3
 
