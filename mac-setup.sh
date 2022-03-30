@@ -20,6 +20,8 @@ brew install tree
 brew install wget
 brew install yarn
 brew install evernote
+brew install git
+brew install bash-completion
 
 defaults write NSGlobalDomain KeyRepeat -int 3
 

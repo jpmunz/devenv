@@ -5,6 +5,10 @@ GIT_PS1_SHOWCOLORHINTS=true
 source ~/.git_prompt
 PS1='\e[1;34m\A $(__git_ps1 "(%s)") \w\e[m\n$ '
 
+if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+    . `brew --prefix`/etc/bash_completion.d/git-completion.bash
+fi
+
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -l'
