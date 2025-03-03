@@ -4,7 +4,10 @@
     name =  'Jonathan Munz'
     email = jpmunz@gmail.com
 [alias]
-    co = checkout
+    r = push -u origin HEAD
+    u = "!f() { \
+      git stash && git checkout $1 && git pull origin $1; \
+    }; f"
 [pull]
     ff = only
 [color]
