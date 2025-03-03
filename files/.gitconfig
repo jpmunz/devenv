@@ -5,6 +5,8 @@
     email = jpmunz@gmail.com
 [alias]
     co = checkout
+[pull]
+    ff = only
 [color]
     diff = auto
     status = auto
@@ -40,3 +42,55 @@
     autocorrect = 1
 [credential]
     helper = cache
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+    branch = delta
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = gruvbox-dark
+    navigate = true
+[init]
+    defaultBranch = main
+[github]
+    user = jpmunz
+[http]
+    postBuffer = 157286400
+
+# https://blog.gitbutler.com/how-git-core-devs-configure-git/
+# clearly makes git better
+[column]
+    ui = auto
+[branch]
+    sort = -committerdate
+[tag]
+    sort = version:refname
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+# why the hell not?
+[commit]
+    verbose = true
+[rerere]
+    enabled = true
+    autoupdate = true
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+# a matter of taste (uncomment if you dare)
+[merge]
+    conflictstyle = zdiff3
